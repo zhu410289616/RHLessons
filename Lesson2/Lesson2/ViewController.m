@@ -48,11 +48,12 @@ static NSInteger max_people = 10000;//程序支持的最多人数
 /** 初始化数据 */
 - (void)createData
 {
-    _n = 10;// max_n;
-    _peopleTotal = 6;//max_people;
+    _n = 10;// max_n; //金矿数
+    _peopleTotal = 6;//max_people; //可以用于挖金子的人数
     _peopleNeed = [[NSMutableArray alloc] init];
     _gold = [[NSMutableArray alloc] init];
     
+    //自动生成测试数据
     for (NSInteger i=0; i<_n; i++) {
         NSInteger tempPeopleNeed = arc4random() % 5;//256;
         NSInteger tempGold = arc4random() % 5;//256;
@@ -60,6 +61,12 @@ static NSInteger max_people = 10000;//程序支持的最多人数
         [_peopleNeed addObject:@(tempPeopleNeed + 1)];
         [_gold addObject:@(tempGold + 1)];
     }
+    
+    //手写测试数据
+    _n = 6;
+    _peopleTotal = 100;
+    _peopleNeed = [NSMutableArray arrayWithArray:@[ @100, @77, @22, @29, @50, @99 ]];
+    _gold = [NSMutableArray arrayWithArray:@[ @5, @92, @22, @87, @46, @90 ]];
     
     _maxGold = [[NSMutableArray alloc] init];
     for (NSInteger i=0; i<=_peopleTotal; i++) {
