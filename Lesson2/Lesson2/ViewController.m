@@ -117,6 +117,7 @@ static NSInteger max_people = 10000;//程序支持的最多人数
     
     //做备忘录
     _maxGold[people][mineNum] = @(retMaxGold);
+    NSLog(@"在仅有 %ld 个人和前 %ld 个金矿时能够得到的最大金子数 %ld", people, mineNum + 1, retMaxGold);
     return retMaxGold;
 }
 
